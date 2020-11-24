@@ -55,5 +55,21 @@
         transform: translate(-50%, -50%) rotateZ(180deg);
     }
 
+    input[name="home-currency-amount"] {
+        font-size: 3rem;
+        text-align: center;
+        width: 100px;
+        color: white;
+        background-color: rgb(253,81,84);
+        border: solid white 1px;
+        border: none;
+        outline: none;
+    }
+    
+    ::placeholder {
+        color: white;
+    }
+
+
 
 /* } */
