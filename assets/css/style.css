@@ -1,78 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
-/* @media screen and (max-width: 768px) { */
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-    #container {
-        height: 100vh;
-    }
-    #convert-from, #convert-to {
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    #convert-from {
-        background-color: rgb(253,81,84);
-        color: white;
-    }
-    #convert-to {
-        background-color: white;
-        color: rgb(253,81,84);
-    }
-    .currency-code {
-        opacity: .6;
-    }
-    .currency-name {
-        font-weight: 100;
-    }
-    .currency-amount {
-        font-weight: 300;
-        font-size: 3rem;
-    }
-    /* .foreign-currency-amount::after {
-        content: "$";
-    } */
-    button {
-        color: rgb(253,81,84);
-        font-size: 3rem;
-        background-color: white;
-        border: solid rgb(253,81,84) 5px;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        outline: none;
-        cursor: pointer;
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: .5s;
-    }
-    .rotate {
-        transform: translate(-50%, -50%) rotateZ(180deg);
-    }
-
-    input[name="home-currency-amount"] {
-        font-size: 3rem;
-        text-align: center;
-        width: 200px;
-        color: white;
-        background-color: rgb(253,81,84);
-        border: solid white 1px;
-        border: none;
-        outline: none;
-    }
-    
-    ::placeholder {
-        color: white;
-    }
-
-
-
-/* } */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+#container {
+  height: 100vh;
+}
+#convert-from,
+#convert-to {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#convert-from {
+  background-color: rgb(253, 81, 84);
+  color: white;
+}
+#convert-to {
+  background-color: white;
+  color: rgb(253, 81, 84);
+}
+.currency-code {
+  opacity: 0.6;
+}
+.currency-name {
+  font-weight: 100;
+}
+.currency-amount {
+  font-weight: 300;
+  font-size: 3rem;
+}
+button {
+  color: rgb(253, 81, 84);
+  font-size: 3rem;
+  background-color: white;
+  border: solid rgb(253, 81, 84) 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.rotate {
+  transform: translate(-50%, -50%) rotateZ(180deg);
+}
+input[name="home-currency-amount"] {
+  font-size: 3rem;
+  text-align: center;
+  width: 200px;
+  color: white;
+  background-color: rgb(253, 81, 84);
+  border: solid white 1px;
+  border: none;
+  outline: none;
+}
+::placeholder {
+  color: white;
+}
