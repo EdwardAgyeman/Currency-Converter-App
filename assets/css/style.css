@@ -34,6 +34,9 @@
         font-weight: 300;
         font-size: 3rem;
     }
+    /* .foreign-currency-amount::after {
+        content: "$";
+    } */
     button {
         color: rgb(253,81,84);
         font-size: 3rem;
@@ -49,7 +52,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        transition: .7s;
+        transition: .5s;
     }
     .rotate {
         transform: translate(-50%, -50%) rotateZ(180deg);
