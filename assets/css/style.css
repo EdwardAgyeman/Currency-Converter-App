@@ -67,3 +67,12 @@ input[name="home-currency-amount"] {
 ::placeholder {
   color: white;
 }
+
+/* Foreign Currency Select Field */
+select {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgb(253, 81, 84);
+}
