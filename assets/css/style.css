@@ -36,8 +36,8 @@
 }
 button {
   color: rgb(253, 81, 84);
-  font-size: 3rem;
   background-color: white;
+  font-size: 3rem;
   border: solid rgb(253, 81, 84) 5px;
   width: 80px;
   height: 80px;
@@ -64,16 +64,17 @@ input[name="home-currency-amount"] {
   border: none;
   outline: none;
 }
-::placeholder {
+input[name="home-currency-amount"]::placeholder {
   color: white;
 }
 
-/* Foreign Currency Select Field */
 select {
   border: none;
   outline: none;
   font-size: 2rem;
-  font-weight: 300;
   color: rgb(253, 81, 84);
   -webkit-appearance:none;
+  text-align-last: center;
+  width: 100vw;
 }
+
