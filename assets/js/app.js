@@ -19,11 +19,12 @@ button.addEventListener("click", (e) => {
 fetch(LATEST_RATE_ENDPOINT)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     button.addEventListener("click", () => {
-      // data.rates.SELECTED CURRENCY instead of USD
       if (input.value > 0) {
-        foreignAmount.textContent = (input.value * data.rates.USD).toFixed(2);
+        // foreignAmount.textContent = (input.value * data.rates.USD).toFixed(2);
+
+        // data.rates.SELECTED CURRENCY instead of USD:
+        foreignAmount.textContent = (input.value * data.rates[foreignCode.textContent]).toFixed(2);
       }
     });
   });
@@ -32,14 +33,10 @@ fetch(SYMBOLS_ENDPOINT)
   .then((response) => response.json())
   .then((data) => {
     // Populating Foreign Currency Select foreignList List
-    console.log(data);
     let option;
     for (el in data.symbols) {
       option = document.createElement("option");
       option.textContent = data.symbols[el];
-      console.log(data.symbols[el]);
-      // Working Solution:
-      // option.value = data.symbols[el];
 
       foreignList.add(option);
       foreignList.addEventListener(
@@ -53,9 +50,6 @@ fetch(SYMBOLS_ENDPOINT)
     for (el in data.symbols) {
       option = document.createElement("option");
       option.textContent = data.symbols[el];
-      console.log(data.symbols[el]);
-      // Working Solution:
-      // option.value = data.symbols[el];
 
       homeList.add(option);
       homeList.addEventListener(
@@ -69,8 +63,6 @@ fetch(SYMBOLS_ENDPOINT)
     for (let el = 0; el < Object.keys(data.symbols).length; el++) {
       option.value = Object.keys(data.symbols)[el];
     }
-    console.log(Object.keys(data.symbols)[5]);
-    console.log(Object.keys(data.symbols).length);
 
     foreignCode.textContent = Object.keys(data.symbols)[foreignList.selectedIndex]
   });
