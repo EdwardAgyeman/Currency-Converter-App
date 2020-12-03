@@ -72,8 +72,15 @@ select {
   border: none;
   outline: none;
   font-size: 2rem;
-  color: rgb(253, 81, 84);
   -webkit-appearance:none;
   text-align-last: center;
   width: 100vw;
+  cursor: pointer;
+}
+.foreign-currency-name {
+  color: rgb(253, 81, 84);
+}
+.home-currency-name {
+  color: white;
+  background-color: rgb(253, 81, 84);
 }

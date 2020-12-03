@@ -2,7 +2,9 @@ let button = document.querySelector("button");
 let input = document.querySelector("#home-currency-amount");
 let foreignAmount = document.querySelector(".foreign-currency-amount");
 let foreignCode = document.querySelector(".foreign-currency-code");
+let homeCode = document.querySelector(".home-currency-code");
 let foreignList = document.querySelector(".foreign-currency-name");
+let homeList = document.querySelector(".home-currency-name");
 const LATEST_RATE_ENDPOINT =
   "http://data.fixer.io/api/latest?access_key=88600c0e4185a70a4036141ebbfa5eb8";
 const SYMBOLS_ENDPOINT =
@@ -45,6 +47,22 @@ fetch(SYMBOLS_ENDPOINT)
         () =>
           // CHANGE FOREIGN CURRENCY CODE:
           foreignCode.textContent = Object.keys(data.symbols)[foreignList.selectedIndex]
+      );
+    }
+    // DONT REPEAT YOURSELF / FIX THIS:
+    for (el in data.symbols) {
+      option = document.createElement("option");
+      option.textContent = data.symbols[el];
+      console.log(data.symbols[el]);
+      // Working Solution:
+      // option.value = data.symbols[el];
+
+      homeList.add(option);
+      homeList.addEventListener(
+        "change",
+        () =>
+          // CHANGE home CURRENCY CODE:
+          homeCode.textContent = Object.keys(data.symbols)[homeList.selectedIndex]
       );
     }
 
