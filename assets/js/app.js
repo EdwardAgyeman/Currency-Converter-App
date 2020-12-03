@@ -65,4 +65,5 @@ fetch(SYMBOLS_ENDPOINT)
     }
 
     foreignCode.textContent = Object.keys(data.symbols)[foreignList.selectedIndex]
+    homeCode.textContent = Object.keys(data.symbols)[homeList.selectedIndex]
   });
