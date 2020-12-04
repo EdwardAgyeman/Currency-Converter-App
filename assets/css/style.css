@@ -67,7 +67,6 @@ input[name="home-currency-amount"] {
 input[name="home-currency-amount"]::placeholder {
   color: white;
 }
-
 select {
   border: none;
   outline: none;

@@ -10,29 +10,30 @@ const LATEST_RATE_ENDPOINT =
 const SYMBOLS_ENDPOINT =
   "http://data.fixer.io/api/symbols?access_key=88600c0e4185a70a4036141ebbfa5eb8";
 
-// ====================== ROTATE BUTTON ============================0x
+// =============================== ROTATE BUTTON =================================
 button.addEventListener("click", (e) => {
   e.target.classList.toggle("rotate");
 });
 
-// ====================== OUTPUT OF THE CONVERSION EUR -> USD or X ===============
+// ====================== MAIN CONVERSION =======================================
 fetch(LATEST_RATE_ENDPOINT)
   .then((response) => response.json())
   .then((data) => {
     button.addEventListener("click", () => {
       if (input.value > 0) {
-        // foreignAmount.textContent = (input.value * data.rates.USD).toFixed(2);
-
-        // data.rates.SELECTED CURRENCY instead of USD:
-        foreignAmount.textContent = (input.value * data.rates[foreignCode.textContent]).toFixed(2);
+        foreignAmount.textContent = (
+          input.value * data.rates[foreignCode.textContent]
+        ).toFixed(2);
       }
     });
   });
 
+// ====================== CURRENCY CODES =========================================
+
 fetch(SYMBOLS_ENDPOINT)
   .then((response) => response.json())
   .then((data) => {
-    // Populating Foreign Currency Select foreignList List
+    // Populating the foreignList
     let option;
     for (el in data.symbols) {
       option = document.createElement("option");
@@ -43,10 +44,12 @@ fetch(SYMBOLS_ENDPOINT)
         "change",
         () =>
           // CHANGE FOREIGN CURRENCY CODE:
-          foreignCode.textContent = Object.keys(data.symbols)[foreignList.selectedIndex]
+          (foreignCode.textContent = Object.keys(data.symbols)[
+            foreignList.selectedIndex
+          ])
       );
     }
-    // DONT REPEAT YOURSELF / FIX THIS:
+    // DRY PRINCIPLE:
     for (el in data.symbols) {
       option = document.createElement("option");
       option.textContent = data.symbols[el];
@@ -56,7 +59,9 @@ fetch(SYMBOLS_ENDPOINT)
         "change",
         () =>
           // CHANGE home CURRENCY CODE:
-          homeCode.textContent = Object.keys(data.symbols)[homeList.selectedIndex]
+          (homeCode.textContent = Object.keys(data.symbols)[
+            homeList.selectedIndex
+          ])
       );
     }
 
@@ -64,6 +69,8 @@ fetch(SYMBOLS_ENDPOINT)
       option.value = Object.keys(data.symbols)[el];
     }
 
-    foreignCode.textContent = Object.keys(data.symbols)[foreignList.selectedIndex]
-    homeCode.textContent = Object.keys(data.symbols)[homeList.selectedIndex]
+    foreignCode.textContent = Object.keys(data.symbols)[
+      foreignList.selectedIndex
+    ];
+    homeCode.textContent = Object.keys(data.symbols)[homeList.selectedIndex];
   });
