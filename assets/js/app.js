@@ -6,9 +6,9 @@ let homeCode = document.querySelector(".home-currency-code");
 let foreignList = document.querySelector(".foreign-currency-name");
 let homeList = document.querySelector(".home-currency-name");
 const LATEST_RATE_ENDPOINT =
-  "http://data.fixer.io/api/latest?access_key=88600c0e4185a70a4036141ebbfa5eb8";
+  "https://data.fixer.io/api/latest?access_key=88600c0e4185a70a4036141ebbfa5eb8";
 const SYMBOLS_ENDPOINT =
-  "http://data.fixer.io/api/symbols?access_key=88600c0e4185a70a4036141ebbfa5eb8";
+  "https://data.fixer.io/api/symbols?access_key=88600c0e4185a70a4036141ebbfa5eb8";
 
 // =============================== ROTATE BUTTON =================================
 button.addEventListener("click", (e) => {
